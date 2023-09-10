@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const connectDB = require('./config/connectDB.cjs');
+const validator = require('./helper/validator.cjs');
 
 
 const app = express();
@@ -13,6 +14,9 @@ connectDB();
 app.get('/', (req, res) => {
     res.send('Hello World Ajay!');
 
+    const url = "https://www.ajay.com";
+  
+    console.log( validator(url));
 });
 
 
