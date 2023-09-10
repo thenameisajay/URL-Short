@@ -1,7 +1,13 @@
+require('dotenv').config();
 const express = require('express');
+const connectDB = require('./config/connectDB.cjs');
 
 
 const app = express();
+
+
+// Connect to database
+connectDB();
 
 
 app.get('/', (req, res) => {
