@@ -1,16 +1,15 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-// Make a database model 
+// Make a database model
 
 const urlSchema = new mongoose.Schema({
-    urlCode: String,
-    longUrl: String,
-    shortUrl: String,
-    date: { type: String, default: Date.now }
+  longUrl: String,
+  shortUrl: String,
+  date: { type: String, default: Date.now },
 });
 
 // Create a model from the schema
 
-const Url = mongoose.model('Url', urlSchema);
+const Url = mongoose.model("Url", urlSchema);
 
 module.exports = Url;
