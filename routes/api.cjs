@@ -5,7 +5,6 @@ const router = express.Router();
 const validator = require("../helper/validator.cjs");
 const URL = require("../model/url.cjs");
 
-
 // Middleware
 router.use(express.json());
 router.use(bodyParser.urlencoded({ extended: false }));
@@ -25,11 +24,7 @@ router.post("/", async (req, res) => {
     console.log("Valid URL");
   }
 
-  /* TODO: now shorten the url and save it in the database with the original url.
-before that we need to check if the url is already present in the database or not.
-if present then return the short url from the database. */
-
-  // TODO: Find if there is already a original url present in the database or not , if present then return the short url from the database.
+  // Check if the URL already exists in the database , if it does then return the short URL or else create a new short URL and return it.
 
   URL.findOne({ longUrl: formatted_url })
     .then((url) => {

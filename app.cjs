@@ -7,7 +7,6 @@ const bodyParser = require("body-parser");
 const shortener = require("./routes/api.cjs");
 const connectDB = require("./config/connectDB.cjs");
 
-
 // Importing the URL model
 const URL = require("./model/url.cjs");
 
@@ -23,13 +22,11 @@ connectDB();
 // Initialising the routes
 app.use("/api/short", shortener);
 
-
 // TODO: Add a route to redirect to the original URL
 app.get("/:shortUrl", (req, res) => {
-
   const shortURL = req.params.shortUrl;
   console.log(shortURL.toLowerCase());
-  URL.findOne({ shortUrl: shortURL.toLowerCase()})
+  URL.findOne({ shortUrl: shortURL.toLowerCase() })
     .then((url) => {
       if (url) {
         console.log("URL found in the database");
@@ -39,7 +36,6 @@ app.get("/:shortUrl", (req, res) => {
         console.log(urlRedirectFormatted);
         res.redirect(urlRedirectFormatted);
         //TODO: Redirect to the original URL
-  
       } else {
         console.log("URL not found in the database");
         res.send("URL not found in the database");
