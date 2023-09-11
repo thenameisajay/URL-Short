@@ -1,22 +1,24 @@
 require('dotenv').config();
 const express = require('express');
 const connectDB = require('./config/connectDB.cjs');
-const validator = require('./helper/validator.cjs');
+
+const  shortener = require('./routes/api.cjs');
+const bodyParser = require('body-parser');
 
 
 const app = express();
 
 
+
 // Connect to database
 connectDB();
 
+// Initialising the routes
+app.use('/api/short', shortener);
+
 
 app.get('/', (req, res) => {
-    res.send('Hello World Ajay!');
-
-    const url = "https://www.ajay.com";
-  
-    console.log( validator(url));
+    res.send('Hello World');
 });
 
 
