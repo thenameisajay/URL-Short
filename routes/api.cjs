@@ -3,6 +3,8 @@ const shortid = require('shortid'); // dependency for generating short id // dep
 const bodyParser = require("body-parser");
 const router = express.Router();
 const validator = require('../helper/validator.cjs');
+const Url = require('../model/url.cjs');
+const mongoose   = require('mongoose');
 
 
 // Middleware
@@ -22,6 +24,19 @@ router.post('/', async (req, res) => {
         console.log('Valid URL');
     }
 
+/* TODO: now shorten the url and save it in the database with the original url.
+before that we need to check if the url is already present in the database or not.
+if present then return the short url from the database. */
+
+    // Generate short id
+    const shortUrl = shortid.generate(url);
+    console.log(shortUrl);
+
+    // TODO: Find if there is already a original url present in the database or not , if present then return the short url from the database.
+
+
+ 
+    
 
 
 });
