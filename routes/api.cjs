@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 const router = express.Router();
 const validator = require("../helper/validator.cjs");
 const URL = require("../model/url.cjs");
-const mongoose = require("mongoose");
+
 
 // Middleware
 router.use(express.json());
@@ -43,7 +43,7 @@ if present then return the short url from the database. */
         console.log(shortUrl);
         const newUrl = new URL({
           longUrl: formatted_url,
-          shortUrl: shortUrl,
+          shortUrl: shortUrl.toLowerCase(),
         });
         newUrl
           .save()
