@@ -32,7 +32,12 @@ cd front-end
 npm run start
 ```
 
-Please ensure that you run the backend server before starting the frontend to enable seamless communication.
+<strong>Note: </strong>
+<ol>
+   <li>Please ensure that you run the backend server before starting the frontend to enable seamless communication. </li>
+   <li> Add the .env file with your database connection string and replace the one in connectDB file.</li>
+</ol>
+
 
 ## License
 This project is licensed under the MIT License, which means you are free to use and modify it according to your needs. For more details, please refer to the [LICENSE](LICENSE) file.
