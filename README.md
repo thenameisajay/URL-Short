@@ -5,6 +5,11 @@ URL Short is a straightforward project developed using the BERM (Bun-Express-Rea
 
 For more information about Bun, please visit the [Bun website](https://bun.sh).
 
+
+## SCREENSHOT:
+<img src="https://github.com/thenameisajay/URL-Short/blob/stable/screenshot/url-short.png" width="400px" height="400px" alt="url-short">
+
+
 ## Getting Started
 
 ### Installation
