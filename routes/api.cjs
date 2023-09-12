@@ -19,7 +19,7 @@ router.post("/", async (req, res) => {
   // Validate the URL
   if (!validator(url)) {
     console.log("Invalid URL");
-    res.send("Invalid URL");
+    res.send("invalid");
   } else {
     console.log("Valid URL");
   }
