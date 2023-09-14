@@ -1,1 +1,1 @@
-web: bun run  app.cjs
+web: node app.cjs
