@@ -16,6 +16,7 @@ const app = express();
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
+app.use(express.static(buildPath)) 
 
 // Connect to database
 connectDB();
